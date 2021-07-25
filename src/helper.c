@@ -1,4 +1,4 @@
-#include "aux.h"
+#include "helper.h"
 
 int *randomize(int *A, int size) {
   srand(time(NULL));
@@ -6,6 +6,10 @@ int *randomize(int *A, int size) {
     A[i] = rand() % 10;
   }
   return A;
+}
+
+int *random_array(int size) {
+  return randomize(malloc(size * sizeof(int)), size);
 }
 
 void print_array(int *A, int size) {
@@ -30,4 +34,14 @@ void print_matrix(int *A, int n, int m) {
       }
     }
   }
+}
+
+void benchmark(int *(*f)(int *, int), int *A, int size) {
+  clock_t start, end;
+  start = clock();
+  f(A, size);
+  end = clock();
+  float time = (end - start) / (float)(CLOCKS_PER_SEC);
+  setlocale(LC_NUMERIC, "");
+  printf("input: %'d runtime: %.6fs\n", size, time);
 }

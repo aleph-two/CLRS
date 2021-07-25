@@ -1,19 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "aux.h"
-#include "sorting/insertion_sort.h"
+#include "helper.h"
+#include "sorting/algorithms.h"
 
 int main(int argc, char const *argv[]) {
-  int size = 40;
-  int *A = malloc(size * sizeof(int));
-  print_array(A, size);
+  int size = 100000;
+  int *A = random_array(size);
 
-  A = randomize(A, size);
-  print_array(A, size);
-
-  A = insertion_sort(A, size);
-  print_array(A, size);
+  printf("insertion sort: ");
+  benchmark(insertion_sort, A, size);
 
   return 0;
 }
