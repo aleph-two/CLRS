@@ -15,7 +15,8 @@ pub fn random_vector(size: usize) -> Vec<i32> {
   a
 }
 
-fn print_array(a: Vec<i32>, size: usize) {
+#[allow(dead_code)]
+pub fn print_array(a: Vec<i32>, size: usize) {
   for i in 0..size {
     print!("{}", a[i]);
     if i + 1 < size {
@@ -26,14 +27,15 @@ fn print_array(a: Vec<i32>, size: usize) {
   }
 }
 
-fn print_matrix(a: Vec<i32>, n: i32, m: i32) {
+#[allow(dead_code)]
+pub fn print_matrix(a: Vec<i32>, n: i32, m: i32) {
   for i in 0..n {
     for j in 0..m {
       print!("{}", a[(i * n + j) as usize]);
       if j + 1 < m {
-        print!(" ");
+        print!(" ")
       } else {
-        print!("\n");
+        print!("\n")
       }
     }
   }
