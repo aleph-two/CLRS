@@ -25,7 +25,7 @@ $(DSTDIR)/$(MAIN): $(SRCDIR)/$(MAIN).c $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ $(LIBS)
 
 run:
-	./$(DSTDIR)/$(MAIN)
+	@./$(DSTDIR)/$(MAIN)
 
 clean:
 	rm -rvf $(BLDDIR) $(DSTDIR)
