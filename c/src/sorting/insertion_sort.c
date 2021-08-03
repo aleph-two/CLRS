@@ -3,7 +3,7 @@ int *insertion_sort(int *a, int size) {
     int i = j - 1;
     while (i >= 0 && a[i] > a[j]) {
       a[i + 1] = a[i];
-      i--;
+      i -= 1;
     }
     a[i + 1] = a[j];
   }
