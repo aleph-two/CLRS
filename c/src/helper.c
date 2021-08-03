@@ -1,20 +1,20 @@
 #include "helper.h"
 
-int *randomize(int *A, int size) {
+int *randomize(int *a, int size) {
   srand(time(NULL));
   for (int i = 0; i < size; i++) {
-    A[i] = rand() % 10;
+    a[i] = rand() % 10;
   }
-  return A;
+  return a;
 }
 
 int *random_array(int size) {
   return randomize(malloc(size * sizeof(int)), size);
 }
 
-void print_array(int *A, int size) {
+void print_array(int *a, int size) {
   for (int i = 0; i < size; i++) {
-    printf("%d", A[i]);
+    printf("%d", a[i]);
     if (i + 1 < size) {
       printf(" ");
     } else {
@@ -23,10 +23,10 @@ void print_array(int *A, int size) {
   }
 }
 
-void print_matrix(int *A, int n, int m) {
+void print_matrix(int *a, int n, int m) {
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
-      printf("%d", A[i * n + j]);
+      printf("%d", a[i * n + j]);
       if (j + 1 < m) {
         printf(" ");
       } else {
@@ -36,10 +36,10 @@ void print_matrix(int *A, int n, int m) {
   }
 }
 
-void benchmark(int *(*f)(int *, int), int *A, int size) {
+void benchmark(int *(*f)(int *a, int size), int *a, int size) {
   clock_t start, end;
   start = clock();
-  f(A, size);
+  f(a, size);
   end = clock();
   float time = (end - start) / (float)(CLOCKS_PER_SEC);
   setlocale(LC_NUMERIC, "");

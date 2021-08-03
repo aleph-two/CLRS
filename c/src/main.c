@@ -6,10 +6,10 @@
 
 int main(int argc, char const *argv[]) {
   int size = 100000;
-  int *A = random_array(size);
+  int *a = random_array(size);
 
   printf("insertion sort: ");
-  benchmark(insertion_sort, A, size);
+  benchmark(insertion_sort, a, size);
 
   return 0;
 }
