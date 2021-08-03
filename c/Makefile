@@ -2,7 +2,7 @@
 
 CC := cc
 
-CFLAGS := -std=c17 -O2
+CFLAGS := -std=c17 -Ofast
 LIBS := -lm
 
 SRCDIR := src
