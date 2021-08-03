@@ -2,7 +2,7 @@
 
 CC := cc
 
-CFLAGS := -std=c17 -O0 -g
+CFLAGS := -std=c17 -O2 -g
 LIBS := -lm
 
 SRCDIR := src
@@ -25,7 +25,7 @@ $(DSTDIR)/$(MAIN): $(SRCDIR)/$(MAIN).c $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ $(LIBS)
 
 run:
-	cd $(DSTDIR) && ./$(MAIN)
+	./$(DSTDIR)/$(MAIN)
 
 clean:
 	rm -rvf $(BLDDIR) $(DSTDIR)
